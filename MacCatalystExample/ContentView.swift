@@ -6,21 +6,41 @@
 //
 
 import SwiftUI
+import Get
+
+struct User: Codable {
+  let userId: Int
+  let title: String
+}
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+  @State private var user: User?
+
+  var body: some View {
+    VStack {
+      if let user {
+        Text(user.title)
+      }
     }
+    .padding()
+    .task {
+      await sampleTask()
+    }
+  }
+
+  func sampleTask() async {
+    do {
+      let client = APIClient(baseURL: URL(string: "https://jsonplaceholder.typicode.com"))
+      let user: User = try await client.send(Request(path: "/todos/\(1 + .random(in: 0...100))")).value
+      self.user = user
+    } catch let error {
+      print("\(error)")
+    }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
