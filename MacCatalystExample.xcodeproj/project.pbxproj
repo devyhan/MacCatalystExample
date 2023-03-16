@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15A5A86029C2AE910049795D /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 15A5A85F29C2AE910049795D /* SkeletonView */; };
 		7E8E2CFC29BA0BAB0053720A /* MacCatalystExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8E2CFB29BA0BAB0053720A /* MacCatalystExampleApp.swift */; };
 		7E8E2CFE29BA0BAB0053720A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8E2CFD29BA0BAB0053720A /* ContentView.swift */; };
 		7E8E2D0029BA0BAD0053720A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E8E2CFF29BA0BAD0053720A /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A5A86029C2AE910049795D /* SkeletonView in Frameworks */,
 				7E8E2D0E29BA0F340053720A /* Get in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +91,7 @@
 			name = MacCatalystExample;
 			packageProductDependencies = (
 				7E8E2D0D29BA0F340053720A /* Get */,
+				15A5A85F29C2AE910049795D /* SkeletonView */,
 			);
 			productName = MacCatalystExample;
 			productReference = 7E8E2CF829BA0BAB0053720A /* MacCatalystExample.app */;
@@ -120,6 +123,7 @@
 			mainGroup = 7E8E2CEF29BA0BAB0053720A;
 			packageReferences = (
 				7E8E2D0C29BA0F340053720A /* XCRemoteSwiftPackageReference "Get" */,
+				15A5A85E29C2AE910049795D /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = 7E8E2CF929BA0BAB0053720A /* Products */;
 			projectDirPath = "";
@@ -275,10 +279,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MacCatalystExample/MacCatalystExample.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MacCatalystExample/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2CMQV98DW6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -293,9 +298,10 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devyhan93.MacCatalystExample;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.devyhan93.MacCatalystExample.macCatalyst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -310,10 +316,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MacCatalystExample/MacCatalystExample.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MacCatalystExample/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2CMQV98DW6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -328,9 +335,10 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devyhan93.MacCatalystExample;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = com.devyhan93.MacCatalystExample.macCatalyst;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -363,6 +371,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		15A5A85E29C2AE910049795D /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		7E8E2D0C29BA0F340053720A /* XCRemoteSwiftPackageReference "Get" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Get.git";
@@ -374,6 +390,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		15A5A85F29C2AE910049795D /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15A5A85E29C2AE910049795D /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
 		7E8E2D0D29BA0F340053720A /* Get */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7E8E2D0C29BA0F340053720A /* XCRemoteSwiftPackageReference "Get" */;
